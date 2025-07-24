@@ -1,18 +1,30 @@
 ---
+import CommonHead from "../components/CommonHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import pkg from "../../package.json";
+
 const { pageTitle } = Astro.props;
+
+const siteName = pkg.name
+  .split(/[\W+]/)
+  .map((word) => `${word.charAt(0).toUpperCase()}${word.slice(1)}`)
+  .join(" ");
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle} | Astro Demo</title>
+    <CommonHead pageTitle={pageTitle} siteName={siteName} />
   </head>
   <body>
-    <h1>{pageTitle}</h1>
-    <slot />
+    <Header siteName={siteName} />
+
+    <main role="main">
+      <h1>{pageTitle}</h1>
+      <slot />
+    </main>
+
+    <Footer />
   </body>
 </html>
