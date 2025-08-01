@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/ok-steve/astro-demo#readme",
   "dependencies": {
+    "@astrojs/rss": "^4.0.12",
     "astro": "^5.12.2"
   }
 }
