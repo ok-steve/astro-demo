@@ -1,4 +1,6 @@
 ---
+import Link from "./Link.astro";
+
 const navLinks = [
   { url: "/", title: "Home" },
   { url: "/posts/", title: "Posts" },
@@ -10,7 +12,7 @@ const navLinks = [
     {
       navLinks.map(({ url, title }) => (
         <li>
-          <a href={url}>{title}</a>
+          <Link to={url}>{title}</Link>
         </li>
       ))
     }

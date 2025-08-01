@@ -1,0 +1,7 @@
+---
+const { to, ...props } = Astro.props;
+
+const url = `${import.meta.env.BASE_URL}${to}`.replaceAll(/\/{2,}/g, "/");
+---
+
+<a {...props} href={url}><slot /></a>

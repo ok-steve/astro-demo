@@ -19,7 +19,7 @@ export async function GET(context) {
     items: posts.map((post) => ({
       title: post.data.title,
       description: post.data.description,
-      link: `/posts/${post.id}/`,
+      link: `${import.meta.env.BASE_URL}posts/${post.id}/`,
       pubDate: post.data.dateCreated,
     })),
     customData: `<language>en-US</language>`,

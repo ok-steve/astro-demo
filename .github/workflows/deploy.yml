@@ -52,7 +52,8 @@ jobs:
 
       - name: Build site
         run: |
-          npm run build --if-present
+          npm run build --if-present -- \
+            --base=${{ steps.pages.outputs.base_path }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
