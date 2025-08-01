@@ -1,8 +1,18 @@
 ---
+const navLinks = [
+  { url: "/", title: "Home" },
+  { url: "/posts/", title: "Posts" },
+];
 ---
 
 <nav role="navigation">
   <ul>
-    <li><a href="/">Home</a></li>
+    {
+      navLinks.map(({ url, title }) => (
+        <li>
+          <a href={url}>{title}</a>
+        </li>
+      ))
+    }
   </ul>
 </nav>
